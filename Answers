@@ -1,0 +1,7 @@
+1.The SingleListItem component's onClickHandler is not correctly defined as a function. Instead of onClickHandler(index), it should be defined as () => onClickHandler(index) to avoid calling the function immediately.
+
+2. The SingleListItem component's isSelected prop is expected to be a boolean, but in the WrappedListComponent, it is passed the selectedIndex state object instead of the boolean value true or false. To fix this, we need to update the isSelected prop with a boolean value of whether the current index is equal to the selectedIndex.
+
+3. The items prop in WrappedListComponent is marked as required, but its default value is set to null. Instead, we should set the default value to an empty array.
+
+4. The WrappedListComponent uses useState hook to keep track of the currently selected index, but it doesn't initialize the state with any value. To avoid undefined being passed as the initial state, we should set the initial state value to null.
